@@ -1,13 +1,13 @@
 using CarApi.Hubs;
-
+using CarApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//Configure CORS
-
 builder.Services.AddControllers();
 builder.Services.AddSignalR();
+builder.Services.AddHostedService<RegistrationCheckerService>();
 
+//Configure CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngular", policy =>
