@@ -8,6 +8,10 @@
     "target": "http://localhost:5039",
     "secure": false,
     "changeOrigin": true,
-    "ws": true
+    "ws": true,
+    "headers": {
+      "Connection": "keep-alive"
+    }
+
   }
 }

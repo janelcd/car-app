@@ -1,1 +1,29 @@
-<p>registration works!</p>
+<div class="container">
+    <h1>Registration Status</h1>
+    <p>Connection Status: <strong>{{ connectionStatus }}</strong></p>
+
+    @if (cars.length === 0){
+        <p>Waiting for data...</p>
+    } @else {
+        <table>
+            <thead>
+                <tr>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Expiry Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (car of cars; track car.id){
+                    <tr>
+                        <td>{{ car.make }}</td>
+                        <td>{{ car.model }}</td>
+                        <td>{{ car.registrationExpiry | date: 'dd MMM yyyy' }}</td>
+                        <td [class]="car.status === 'Valid'? 'status-valid': 'status-expired'">{{ car.status }}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
