@@ -9,6 +9,7 @@ Project Specifications:
 4. Display a table that shows live data of a car’s current registration expiry status (valid or expired), using SignalR and the background service from step 3. This page will be @ ‘/registration’.
 
 Getting Started:
+
 Backend:
 1. Open CarApi.sln in Visual Studio
 2. Run the API
