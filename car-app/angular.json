@@ -59,7 +59,8 @@
               "buildTarget": "car-app:build:production"
             },
             "development": {
-              "buildTarget": "car-app:build:development"
+              "buildTarget": "car-app:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
