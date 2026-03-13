@@ -1,1 +1,37 @@
-<p>cars works!</p>
+<div class="container">
+    <h1>Cars</h1>
+
+    <div>
+        <label for="makeFilter"> Filter by Make / Brand:</label>
+        <input id="makeFilter" type="text" [(ngModel)]="makeFilter" (ngModelChange)="onFilterChange()" placeholder="e.g. Toyota"/>
+    </div>
+
+    @if (errorMessage) {
+        <p>{{errorMessage}}</p>
+    }
+
+    @if (cars.length === 0){
+        <p>No cars found.</p>
+    } @else {
+        <table>
+            <thead>
+                <tr>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Year</th>
+                    <th>Registration Expiry</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (car of cars; track car.id){
+                    <tr>
+                        <td>{{ car.make }}</td>
+                        <td>{{ car.model }}</td>
+                        <td>{{ car.year }}</td>
+                        <td>{{ car.registrationExpiry | date: 'dd MMM yyyy' }}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
