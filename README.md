@@ -21,5 +21,5 @@ Frontend:
 4. Open http://localhost:4200
 
 Pages / Navigations:
-/ - displays the list of cars with optional filter of make
-/registration - displays live registration expiry status of all cars, updated every 10 seconds via SignalR
+1. '/' - displays the list of cars with optional filter of make
+2. '/registration' - displays live registration expiry status of all cars, updated every 10 seconds via SignalR
