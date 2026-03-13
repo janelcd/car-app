@@ -1,8 +1,12 @@
+using CarApi.Hubs;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 //Configure CORS
 
 builder.Services.AddControllers();
+builder.Services.AddSignalR();
 
 builder.Services.AddCors(options =>
 {
@@ -21,5 +25,6 @@ app.UseHttpsRedirection();
 app.UseCors("AllowAngular");
 app.UseAuthorization();
 app.MapControllers();
+app.MapHub<RegistrationHub>("/hubs/registration");
 
 app.Run();
